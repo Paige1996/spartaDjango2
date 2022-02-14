@@ -1,5 +1,5 @@
 name: Django CI
-
+#깃헙 action 에서 어떻게 실행이 되고 있는지 보여줌.
 
 on:
   push: # on, push action이 언제 실행 되는지 정의함
