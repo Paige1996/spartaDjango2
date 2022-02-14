@@ -35,6 +35,7 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 
 INSTALLED_APPS = [
+    "tabom.apps.TabomConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -130,3 +131,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+try:
+    from sparta.local_settings import *  # settings.py있으면 여기있는것을 쓰고 이미 있으면 덮어써라 local_settings.py로 덮어써라
+except ImportError:
+    pass

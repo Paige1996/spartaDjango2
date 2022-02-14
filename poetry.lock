@@ -1,4 +1,12 @@
 [[package]]
+name = "article"
+version = "0.1.1"
+description = "Turn your Python script into a report with inline figures."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "asgiref"
 version = "3.5.0"
 description = "ASGI specs, helper code, and adapters"
@@ -269,9 +277,12 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "b2124cff9eb18e7bb92982cd4da8547f597ae371d30895b8c8e63516961108a8"
+content-hash = "f9fea1bb954656cbb831e03abd0dd79ce4673a4f662a2799967d142c300f612f"
 
 [metadata.files]
+article = [
+    {file = "article-0.1.1.tar.gz", hash = "sha256:3e7227a1dc00e115c7644fddfb1532c99e7ac06fed61f7257f64dfdbd228ad0c"},
+]
 asgiref = [
     {file = "asgiref-3.5.0-py3-none-any.whl", hash = "sha256:88d59c13d634dcffe0510be048210188edd79aeccb6a6c9028cdad6f31d730a9"},
     {file = "asgiref-3.5.0.tar.gz", hash = "sha256:2f8abc20f7248433085eda803936d98992f1343ddb022065779f37c5da0181d0"},
