@@ -1,0 +1,31 @@
+name: Django CI
+
+
+on:
+  push: # on, push action이 언제 실행 되는지 정의함
+
+jobs: # 하나의 workflow에는 여러개의 job으로 구성됨. 여기서 ci라는 이름의 job하나만 정의해 사용
+  ci:
+    runs-on: ubuntu-latest #job이 실행되는 machine을 ㅢ미함 github가 제공하는 ubunntu-lastest를 사용
+    steps: # job은 여러개의 step으로 구성됨. step은 명령을 실행하거나 다른 action을 실행함.
+      - name: Check out the codes
+        uses: actions/checkout@v2 #실행할 action
+
+      - name: Setup python environment
+        id: setup-python
+        uses: actions/setup-python@v2
+        with: #action에 전달할 parameter변수.
+          python-version: 3.9.9
+
+      - name: Install Poetry
+        run: | #실행할 명령어. run: | yaml문법. |를 통해 value가 여러줄 이라는 것을 의미함 
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          ${HOME}/.poetry/bin/poetry install
+
+      - name: Test python project
+        run: |
+          poetry run python manage.py test

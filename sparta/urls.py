@@ -23,9 +23,7 @@ from ninja import NinjaAPI  # djangoNINJA에 api객체 import
 api = NinjaAPI()
 
 
-@api.get(
-    "/add"
-)  # 닌자 사용. urls 와 view function이 분리된 형태가 아님. url로 가면 어떤 함수가 실행되는 지 바로 볼수있음
+@api.get("/add")  # 닌자 사용. urls 와 view function이 분리된 형태가 아님. url로 가면 어떤 함수가 실행되는 지 바로 볼수있음
 def add(request: HttpRequest, a: int, b: int) -> Dict[str, int]:
     return {"result": a + b}
 
