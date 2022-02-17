@@ -115,11 +115,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Seoul"  # 이렇게 안맞춰 주면 시간의 오류가 생긴다.
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
+
+# true로 된것을 false로 바꿔준다
 
 
 # Static files (CSS, JavaScript, Images)
